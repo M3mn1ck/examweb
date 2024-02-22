@@ -1,0 +1,174 @@
+.body {
+  font-family: 'Oswald';
+}
+
+.table-auto {
+  width: 100%;
+  margin-top: 1em;
+  border-collapse: collapse;
+}
+
+.table-auto th,
+.table-auto td {
+  border: 1px solid #8bc958;
+  padding: 0.75em;
+  text-align: left;
+}
+
+.custom-text-color {
+  color: #8bc958;
+}
+
+.table-auto th, .table-auto td {
+  color: #000000;
+}
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-bar a {
+  transition: transform 0.3s ease;
+}
+
+.nav-bar a:hover {
+  transform: scale(1.1);
+}
+
+.inf {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.inf::after {
+  content: "";
+  display: block;
+  height: 5px;
+  background-color: #8bc958;
+  margin: 20px 0; 
+}
+
+.red-line {
+  height: 5px;
+  background-color: #8bc958;
+  margin: 20px 0;
+}
+
+.dignities {
+  width: 30%;
+  max-width: 300px;
+  min-width: 200px;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  text-align: center;
+  transition: transform 0.3s;
+  background-color: #8bc958;
+  color: #FFFFFF;
+}
+
+.dignities h3 {
+  color: #FFFFFF;
+}
+
+.dignities:hover {
+  transform: scale(1.1);
+}
+
+.custom-text-red {
+  color: #8bc958;
+}
+
+.custom-text-black {
+  color: #000000;
+}
+
+.header-title {
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.5em;
+  text-align: center; 
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  max-height: 300px; 
+  overflow-y: auto;
+}
+
+.dropdown-button:hover + .dropdown-content,
+.dropdown-content:hover {
+  display: block;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.guide-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #8bc958;
+}
+
+.guide-image-container {
+  position: relative;
+}
+
+.guide-image {
+  width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.guide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(96, 192, 72, 0.753);
+  color: white;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.guide-card:hover .guide-overlay {
+  opacity: 1;
+}
+
+.guide-name {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.pagination-button, .rounded-md {
+  background-color: #8bc958; 
+  color: white;
+}
+
