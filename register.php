@@ -13,5 +13,6 @@
         <input type="password" name="password" placeholder="Пароль" required>
         <input type="submit" value="Зарегистрироваться">
     </form>
+    <p>Уже зарегистрированны? <a href="login.php">Войти</a></p>
 </body>
 </html>

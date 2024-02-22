@@ -8,6 +8,7 @@ if (isset($_GET['error'])) {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +17,7 @@ if (isset($_GET['error'])) {
     <title>Вход</title>
     <link rel="stylesheet" href="css/st.css">
 </head>
+
 <body>
     <form action="../auth/login_process.php" method="post">
         <h2>Вход</h2>
@@ -23,5 +25,6 @@ if (isset($_GET['error'])) {
         <input type="password" name="password" placeholder="Пароль" required>
         <input type="submit" value="Войти">
     </form>
+    <p>Ещё не зарегистрированны? <a href="register.php">Регистрация</a></p>
 </body>
 </html>
