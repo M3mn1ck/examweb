@@ -1,0 +1,210 @@
+<!DOCTYPE html>  
+<html lang="ru">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>MoscowTour</title>  
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">  
+    <link href="css/style.css" rel="stylesheet">  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+</head>  
+<body>  
+    <body style="background-color: #00000083;">
+
+
+        <header class="bg-green-500 nav-bar">
+
+        <div class="container mx-auto p-4 flex items-center justify-between">
+            <img src="img/moscowcalling2.png" class="h-12" alt="logonav">
+            <div class="header-title">
+                <span>MOSCOW TOUR</span>
+            </div>
+            <div class="dropdown">
+                <button class="dropdown-button text-white text-sm font-semibold">МЕНЮ</button>
+                <div class="dropdown-content hidden">
+                    <a href="profile/profile.php">Личный кабинет</a>
+                    <a href="#about">О нас</a>
+                    <a href="#routes">Выбор маршрута</a>
+                    <a href="#map">Карта Москвы</a>
+                    <a href="#guides_id">Наши гиды</a>
+                    <a href="#contacts">Контакты</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="header-placeholder h-32 bg-white-300"> </div>
+
+    <section class="container mx-auto my-4" id="about">
+        <div class="flex items-center">
+            <img src="img/moscowcalling1.png" alt="logomain" class="w-1/3 rounded-lg">
+            <div class="ml-4">
+                <h2 class="text-2xl font-bold custom-text-red">Москва зовет!</h2>
+                <p class="custom-text-black">Туристическое агентство "MOSCOW TOUR" приглашает вас открыть для себя богатую историю, удивительную архитектуру и бурлящую культурную жизнь Москвы. Наше агентство предлагает эксклюзивные туры с опытными гидами, которые помогут вам исследовать самые знаковые места столицы, а также познакомят вас с менее известными, но не менее очаровательными уголками города.</p>
+            </div>
+        </div>
+    </section>    
+    
+    <div class="red-line"></div>
+
+    <div class="inf">
+        <div class="dignities custom-bg">
+            <h3 class="text-xl font-bold custom-text-color">Индивидуальный подход</h3>
+            <p>Наши туры разработаны с учетом ваших интересов и предпочтений</p>
+        </div>
+        <div class="dignities custom-bg">
+            <h3 class="text-xl font-bold custom-text-color">Опытные гиды</h3>
+            <p>Наши гиды обладают глубокими знаниями о Москве и ее истории</p>
+        </div>
+        <div class="dignities custom-bg">
+            <h3 class="text-xl font-bold custom-text-color">Уникальные маршруты</h3>
+            <p>Мы предлагаем экскурсии не только по классическим достопримечательностям, но и по скрытым жемчужинам города</p>
+        </div>
+        <div class="dignities custom-bg">
+            <h3 class="text-xl font-bold custom-text-color">Комфорт и безопасность</h3>
+            <p>Обеспечиваем полное сопровождение и поддержку на протяжении всего путешествия</p>
+        </div>
+    </div>
+    
+    <div class="red-line"></div>
+
+    <script src="routesapi.js"></script> 
+    <div class="container mx-auto my-4">      
+        <section class="container mx-auto my-4 text-center">
+            <h2  id="routes" class="text-2xl font-bold custom-text-color mb-4">Наши маршруты</h2>
+        </section>          
+        <div class="mt-4">      
+            <table class="table-auto">      
+                <thead>      
+                    <tr>      
+                        <th class="px-4 py-2">Название маршрута</th>      
+                        <th class="px-4 py-2">Описание</th>
+                        <th class="px-4 py-2">Достопримечательности</th>        
+                    </tr>      
+                </thead>      
+                <tbody id="routesData">      
+    
+                </tbody>      
+            </table>      
+        </div>                    
+    </div>      
+
+    <script src="js/routes.js"></script>
+    
+    <div class="container mx-auto my-4 flex justify-center" id="paginationButtons"></div>
+
+    <div class="red-line"></div>
+
+    <script src="https://maps.api.2gis.ru/2.0/loader.js"></script>
+
+    <section class="container mx-auto my-4">  
+        <h2 id="guides" class="text-2xl font-bold text-green-500 text-center">Карта Москвы</h2>
+
+    <div id="map" style="width: 100%; height: 400px;"></div>
+    <script>
+        DG.then(function() {
+            DG.map('map', {
+                center: [55.75, 37.61],
+                zoom: 13
+            });
+        });
+    </script>
+    </section>
+
+    <div class="red-line"></div>
+
+    <section class="container mx-auto my-4"> 
+        <h2  id="guides_id" class="text-2xl font-bold text-green-600 text-center">Наши гиды</h2> 
+        <div class="grid grid-cols-3 gap-4"> 
+            <div class="guide-card bg-green-200 p-4 rounded-md">
+
+                <div class="guide-image-container">
+                    <img src="img/gid1.png" alt="Гид 1" class="guide-image">
+                    <div class="guide-overlay">
+                        <p class="guide-description">Энтузиаст московской истории, специализируется на архитектурных шедеврах города. Пожилой Гибон увлечет вас рассказами о старинных особняках и знаменитых советских зданиях.</p>
+                    </div>
+                </div>
+                <h3 class="guide-name text-white-600">Пожилой Гибон</h3>
+            </div>
+            <div class="guide-card bg-green-200 p-4 rounded-md">
+
+                <div class="guide-image-container">
+                    <img src="img/gid2.png" alt="Гид 2" class="guide-image">
+                    <div class="guide-overlay">
+                        <p class="guide-description">Искусствовед с большим стажем. Саша предложит вам тур по галереям и музеям Москвы, раскрывая секреты великих художественных произведений.</p>
+                    </div>
+                </div>
+                <h3 class="guide-name text-white-600">Саша Грей</h3>
+            </div>
+            <div class="guide-card bg-green-200 p-4 rounded-md">
+
+                <div class="guide-image-container">
+                    <img src="img/gid3.png" alt="Гид 3" class="guide-image">
+                    <div class="guide-overlay">
+                        <p class="guide-description">Любитель природы и активного отдыха. Владимир проведет вас по живописным паркам и садам Москвы, рассказывая о их истории и современном значении для городской жизни.</p>
+                    </div>
+                </div>
+                <h3 class="guide-name text-white-600">Владимир Путин</h3>
+            </div>
+        </div> 
+    </section>
+    <style>
+        /* Позиционирование текста и кнопки */
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+    
+        /* Размытие фона */
+        .bg-blur {
+            background-image: url('img/bg.jpg');
+            filter: blur(0.1px);
+            height: calc(10vh + 50px); /* Увеличиваем высоту на 50 пикселей */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+    
+        /* Стили для кнопки */
+        .btn-success {
+        animation: pulse 1s infinite;
+        background-color: #28a745; /* Зеленый цвет кнопки */
+        border-color: #28a745; /* Цвет рамки кнопки */
+        border-radius: 6px; /* Радиус скругления краев */
+    }
+    
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+    </head>
+    <body>
+    
+    <div class="bg-blur">
+        <div class="content">
+            <h1>Вы выбрали маршрут?</h1>
+            <p>Тогда скорее оформляйте заявку и переходите в личный кабинет после оформления заявки. Там вас будет ждать вся необходимая информация.</p>
+            <a href="profile/profile.php" class="btn btn-success">Оформить заявку</a>
+        </div>
+    </div>
+    
+    <footer id="contacts" class="bg-green-500 text-white text-center">
+        <p>&copy; MOSCOW TOUR | moscowtour@mail.ru | +7 111 111-11-11</p> 
+    </footer> 
+
+</body> 
+</html>
